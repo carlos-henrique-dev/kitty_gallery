@@ -13,19 +13,16 @@ const Card = memo(({ imageInfo, isFavorite }: CardProps) => {
 
   const dispatch = useContextDispatch();
 
-  const handleFavorite = () => {
-    if (isFavorite) {
-      dispatch({
-        type: 'REMOVE_FROM_FAVORITE',
-        payload: imageId,
-      });
-    }
-
-    dispatch({
-      type: 'ADD_TO_FAVORITE',
-      payload: imageId,
-    });
-  };
+  const handleFavorite = () =>
+    isFavorite
+      ? dispatch({
+          type: 'REMOVE_FROM_FAVORITE',
+          payload: imageId,
+        })
+      : dispatch({
+          type: 'ADD_TO_FAVORITE',
+          payload: imageId,
+        });
 
   const handleImageError = ({ currentTarget }: any) => {
     // eslint-disable-next-line no-param-reassign

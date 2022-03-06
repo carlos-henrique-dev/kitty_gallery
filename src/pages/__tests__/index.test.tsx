@@ -70,4 +70,47 @@ describe('render page', () => {
 
     expect(CardsFavorite.length).toBeGreaterThan(0);
   });
+
+  it('remove favorite image when a card is clicked twice', async () => {
+    render(
+      <ContextProvider>
+        <Index />
+      </ContextProvider>
+    );
+
+    const CardsIndex = screen.queryAllByTestId('card');
+
+    await fireEvent(
+      CardsIndex[0],
+      new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+      })
+    );
+
+    await fireEvent(
+      screen.getByTestId('tab-1'),
+      new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+      })
+    );
+
+    const CardsFavorite = screen.queryAllByTestId('card');
+
+    await fireEvent(
+      CardsFavorite[0],
+      new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+      })
+    );
+
+    const CardsFavoriteAfter = screen.queryAllByTestId('card');
+
+    const EmptyMessage = screen.queryByTestId('empty-list');
+
+    expect(CardsFavoriteAfter.length).toBe(0);
+    expect(EmptyMessage).toBeInTheDocument();
+  });
 });

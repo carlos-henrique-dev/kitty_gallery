@@ -24,7 +24,7 @@ Then run `yarn` to install the dependencies
 
 To run de project use: `yarn start`
 
-To test de project use: `npm test`
+To test de project use: `yarn test`
 
 ## Screenshots
 
