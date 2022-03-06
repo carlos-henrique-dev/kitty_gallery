@@ -5,13 +5,7 @@ export type ImageInfo = {
 };
 
 const images: ImageInfo[] = [
-  {
-    image_id: 1,
-    title:
-      'Placekitten - 350 x 546 - Cat ipsum dolor sit amet, somehow manage to catch a bird but have no idea what to do next, so play with it until it dies of shock so friends are not food demand to have some of whatever the human is cooking, then sniff the offering and walk away',
-    url: 'https://placekitten.com/350/688',
-  },
-  //   { image_id: 1, title: 'Placekitten - 350 x 688', url: 'https://placekitten.com/350/688' },
+  { image_id: 1, title: 'Placekitten - 350 x 688', url: 'https://placekitten.com/350/688' },
   { image_id: 2, title: 'Placekitten - 350 x 576', url: 'https://placekitten.com/350/576' },
   { image_id: 3, title: 'Placekitten - 350 x 315', url: 'https://placekitten.com/350/315' },
   { image_id: 4, title: 'Placekitten - 350 x 198', url: 'https://placekitten.com/350/198' },

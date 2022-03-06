@@ -1,8 +1,11 @@
+@use "./variables/mixins.scss" as mixin;
 @use "./variables/colors.scss" as colors;
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 @import "./card.scss";
+@import "./tabs.scss";
+@import "./scrollTop.scss";
 
 * {
 	padding: 0;
@@ -12,11 +15,49 @@
 html,
 body {
 	font-family: "Roboto", sans-serif;
+	background-color: colors.$background;
+	scroll-behavior: smooth
 }
 
-.gallery {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	background-color: colors.$background;
+.container {
+	@include mixin.column;
+	padding: 50px 20px;
+
+	.heading {
+		@include mixin.column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 30px;
+
+		.description {
+			color: colors.$secondary;
+			margin-bottom: 20px;
+			text-align: center;
+			font-size: 1.5rem;
+			text-align: center;
+
+			h1 {
+				color: colors.$text;
+				font-size: 1.7rem;
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 300px);
+		grid-template-rows: 350px;
+		gap: 10px 20px;
+		justify-content: center;
+		align-content: center;
+		justify-items: center;
+		align-items: center;
+
+		.empty-list {
+			color: colors.$secondary;
+			text-align: center;
+			font-size: 1.7rem;
+		}
+	}
 }

@@ -27,7 +27,7 @@ const Card = memo(({ imageInfo, isFavorite }: CardProps) => {
   };
 
   return (
-    <div className="card" onClick={handleFavorite}>
+    <div className="card" onClick={handleFavorite} data-testid="card">
       <GoBookmark className={`icon bookmark ${isFavorite ? 'show' : ''}`} />
 
       <img src={url} alt={title} className="image" width="300" height="272" />

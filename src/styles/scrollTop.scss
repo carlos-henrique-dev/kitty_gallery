@@ -1,0 +1,32 @@
+@use "./variables/mixins.scss" as mixin;
+@use "./variables/colors.scss" as colors;
+
+.scroll-top {
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: colors.$primary-darker;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	display: none;
+
+	.icon {
+		color: colors.$secondary;
+		font-size: 2.5rem;
+		margin-bottom: 5px;
+	}
+
+	&.show {
+		display: flex;
+	}
+
+	&:hover,
+	&:active {
+		transform: scale(1.05);
+	}
+}

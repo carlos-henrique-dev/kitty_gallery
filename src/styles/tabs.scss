@@ -1,0 +1,29 @@
+@use "./variables/mixins.scss" as mixin;
+@use "./variables/colors.scss" as colors;
+
+.tabs {
+	@include mixin.row;
+}
+
+.tab {
+	@include mixin.row;
+	color: colors.$text;
+
+	width: fit-content;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+
+	.icon {
+		margin: 0 5px;
+	}
+
+	.title {
+		font-weight: bold;
+	}
+
+	&.active {
+		background-color: colors.$primary-darker;
+		color: colors.$secondary;
+	}
+}

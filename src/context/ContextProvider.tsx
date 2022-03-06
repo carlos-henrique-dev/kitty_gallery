@@ -87,4 +87,4 @@ const useContextDispatch = () => {
   throw new Error('useContextDispatch must be used inside ContextProvider');
 };
 
-export { ContextProvider, useContextState, useContextDispatch };
+export { ContextProvider, useContextState, useContextDispatch, StateContext, DispatchContext };
