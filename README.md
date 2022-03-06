@@ -6,7 +6,7 @@ This app is a gallery that has a favorites section and when a user clicks on an 
 
 ## The result
 
-[Click here to check the result on Vercel](www.google.com)
+[Click here to check the result on Vercel](https://kitty-gallery.vercel.app/)
 
 ## Used technologies
 
