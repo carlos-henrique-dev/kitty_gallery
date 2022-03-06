@@ -1,4 +1,8 @@
+@use "./variables/colors.scss" as colors;
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+@import "./card.scss";
 
 * {
 	padding: 0;
@@ -8,4 +12,11 @@
 html,
 body {
 	font-family: "Roboto", sans-serif;
+}
+
+.gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: colors.$background;
 }

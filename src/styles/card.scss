@@ -1,0 +1,59 @@
+@use "./variables/mixins.scss" as mixin;
+@use "./variables/colors.scss" as colors;
+
+.card {
+	@include mixin.column;
+
+	width: 300px;
+	border-radius: 5px;
+	margin: 5px;
+	position: relative;
+	background-color: colors.$secondary;
+	cursor: pointer;
+
+	.image {
+		object-fit: cover;
+		border-radius: 5px 5px 0 0;
+	}
+
+	.info {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		height: 70px;
+		color: colors.$white;
+		padding-right: 10px;
+
+		&.favorite {
+			color: colors.$primary;
+		}
+	}
+
+	.title {
+		display: -webkit-box;
+		width: 100%;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-size: 14px;
+	}
+
+	.icon {
+		width: 30px;
+
+		&.bookmark {
+			display: none;
+			color: colors.$inactive;
+			position: absolute;
+			top: 0;
+			right: -2px;
+			font-size: 40px;
+
+			&.show {
+				display: initial;
+				color: colors.$primary;
+			}
+		}
+	}
+}

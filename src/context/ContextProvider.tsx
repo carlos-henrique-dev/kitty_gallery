@@ -41,7 +41,7 @@ const StateReducer = (state: State, action: Action): State => {
         return state;
       }
 
-      const favorites = state.favorites.splice(index, 1);
+      const favorites = state.favorites.filter((id) => id !== action.payload);
 
       return {
         ...state,
