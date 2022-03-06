@@ -1,8 +1,7 @@
-import React, { createContext, useReducer } from 'react';
-import { useContext } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import { images, ImageInfo } from '../data/images';
 
-type _ProviderProps = {
+type ProviderProps = {
   children: React.ReactNode;
   [key: string]: any;
 };
@@ -54,7 +53,7 @@ const StateReducer = (state: State, action: Action): State => {
   }
 };
 
-const ContextProvider = ({ children }: _ProviderProps) => {
+function ContextProvider({ children }: ProviderProps) {
   const [state, dispatch] = useReducer(StateReducer, {
     images,
     favorites: [],
@@ -65,7 +64,7 @@ const ContextProvider = ({ children }: _ProviderProps) => {
       <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
     </StateContext.Provider>
   );
-};
+}
 
 const useContextState = () => {
   const state = useContext(StateContext);

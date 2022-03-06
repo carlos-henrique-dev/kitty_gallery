@@ -16,7 +16,7 @@ const Tabs = memo(({ tabs, changeTab, currentTab }: TabProps) => {
   const handleTabClick = (tabIndex: number) => changeTab(tabIndex);
 
   const renderTabs = () => {
-    return tabs.map((tab) => {
+    return tabs.map((tab: TabItem) => {
       const { index, title, icon: Icon = null } = tab;
 
       return (

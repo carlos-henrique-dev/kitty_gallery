@@ -8,7 +8,7 @@ import { ImageInfo } from '../data/images';
 
 const tabs = [
   { index: 0, title: 'Home', icon: <GoHome /> },
-  { index: 1, title: 'Favorite', icon: <GoBookmark /> },
+  { index: 1, title: 'Favorites', icon: <GoBookmark /> },
 ];
 
 function Index() {
@@ -40,11 +40,9 @@ function Index() {
       );
     }
 
-    return list.map((image) => {
-      return (
-        <Card imageInfo={image} key={image.image_id} isFavorite={isFavorite(image.image_id)} />
-      );
-    });
+    return list.map((image) => (
+      <Card imageInfo={image} key={image.image_id} isFavorite={isFavorite(image.image_id)} />
+    ));
   };
 
   return (
@@ -57,7 +55,9 @@ function Index() {
 
         <Tabs tabs={tabs} changeTab={setTab} currentTab={tab} />
       </section>
+
       <section className="gallery">{renderCards(images)}</section>
+
       <ScrollTop />
     </section>
   );

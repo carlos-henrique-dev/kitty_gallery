@@ -36,7 +36,11 @@ const images: ImageInfo[] = [
   { image_id: 29, title: 'Placekitten - 350 x 554', url: 'https://placekitten.com/350/554' },
   { image_id: 30, title: 'Placekitten - 350 x 248', url: 'https://placekitten.com/350/248' },
   { image_id: 31, title: 'Placekitten - 350 x 579', url: 'https://placekitten.com/350/579' },
-  { image_id: 32, title: 'Placekitten - 350 x 324', url: 'https://placekitten.com/350/324' },
+  {
+    image_id: 32,
+    title: 'Placekitten - 350 x 324 - Simulate error on load image',
+    url: 'https://placekitten.com/350/324s',
+  },
   {
     image_id: 33,
     title:

@@ -19,6 +19,16 @@ body {
 	scroll-behavior: smooth
 }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 .container {
 	@include mixin.column;
 	padding: 50px 20px;

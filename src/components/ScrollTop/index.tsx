@@ -11,15 +11,12 @@ function ScrollTop() {
     const domRect = element?.getBoundingClientRect();
     setTabPosition(domRect?.top || 0);
 
-    function updatePosition() {
-      setShowScrollTop(window.pageYOffset > tabPosition);
-    }
+    const updatePosition = () => setShowScrollTop(window.pageYOffset > tabPosition);
 
     window.addEventListener('scroll', updatePosition);
     updatePosition();
 
     return () => window.removeEventListener('scroll', updatePosition);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleScroll = () => window.scrollTo(0, 0);
@@ -29,6 +26,8 @@ function ScrollTop() {
       className={`scroll-top ${showScrollTop ? 'show' : ''}`}
       onClick={handleScroll}
       data-testid="scroll-top"
+      onKeyPress={() => {}}
+      role="none"
     >
       <GoArrowUp className="icon" />
     </div>
