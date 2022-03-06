@@ -1,10 +1,10 @@
-export type ImageURL = {
+export type ImageInfo = {
   image_id: number;
   title: string;
   url: string;
 };
 
-const images: ImageURL[] = [
+const images: ImageInfo[] = [
   { image_id: 1, title: 'Placekitten - 350 x 688', url: 'https://placekitten.com/350/688' },
   { image_id: 2, title: 'Placekitten - 350 x 576', url: 'https://placekitten.com/350/576' },
   { image_id: 3, title: 'Placekitten - 350 x 315', url: 'https://placekitten.com/350/315' },
